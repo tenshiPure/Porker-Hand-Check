@@ -33,6 +33,7 @@ getHand :: String -> Hand
 getHand test = map mkCard $ splitOn "," test
 
 
+-- [2, 3, 4, 5, 14] -> [1, 2, 3, 4, 5]
 switchAce :: [Int] -> [Int]
 switchAce nums = sort $ map (\num -> if num == 14 then 1 else num) nums
 
