@@ -39,8 +39,8 @@ switchAce nums = sort $ map (\num -> if num == 14 then 1 else num) nums
 
 
 getNums :: Hand -> [Int]
-getNums hand = map (\card -> num card) hand
+getNums = map num
 
 
 getSuits :: Hand -> [Char]
-getSuits hand = map (\card -> suit card) hand
+getSuits = map suit

@@ -27,7 +27,7 @@ isFlush hand = (1 ==) $ length $ nub $ getSuits hand
 
 -- (check continuation [2, 3, 4, 5, 14]) || (check continuation [1, 2, 3, 4, 5])
 isStraight :: Hand -> Bool
-isStraight hand = (isContinuation nums) || (isContinuation $ switchAce nums)
+isStraight hand = isContinuation nums || isContinuation (switchAce nums)
     where nums = sort $ getNums hand
 
 
@@ -62,6 +62,6 @@ checkers = [
 
 -- find first hit or Garbage
 getHandName :: [(String, Hand -> Bool)] -> Hand -> String
-getHandName ((label, checker):xs) hand | checker hand == True = label
-getHandName ((label, checker):xs) hand | checker hand /= True = getHandName xs hand
+getHandName ((label, checker):xs) hand |      checker hand  = label
+getHandName ((label, checker):xs) hand | not (checker hand) = getHandName xs hand
 getHandName [] _ = "Garbage"
