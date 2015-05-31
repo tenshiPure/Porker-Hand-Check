@@ -28,7 +28,7 @@ main = do
         Royal Straight Flush
         Straight Flush
         Four Of A Kind
-        Three Of A Kind
+        Full House
         Flush
         Straight
         Straight

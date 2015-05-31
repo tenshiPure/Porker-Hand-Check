@@ -23,6 +23,7 @@ checkers = [
             ("Royal Straight Flush", isRoyalStraightFlush),
             ("Straight Flush",       isStraightFlush),
             ("Four Of A Kind",       \hand -> kinds hand == 4),
+            ("Full House",           \hand -> kinds hand == 3 && pairs hand == 1),
             ("Flush",                isFlush),
             ("Straight",             isStraight),
             ("Three Of A Kind",      \hand -> kinds hand == 3),
