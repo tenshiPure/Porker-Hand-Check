@@ -1,7 +1,6 @@
 import Data
 import Checker
 
-
 main :: IO ()
 main = do
     let tests = [
@@ -22,7 +21,6 @@ main = do
     let hands = map getHand tests
 
     putStrLn $ unlines $ map (getHandName checkers) hands
-
 
     {-
         $ ./porker
